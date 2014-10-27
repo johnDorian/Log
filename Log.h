@@ -6,9 +6,31 @@
 //
 //
 
-#ifndef ____Log__
-#define ____Log__
 
-#include <stdio.h>
+#ifndef LOG_h
+#define LOG_h
 
-#endif /* defined(____Log__) */
+
+
+
+class Log
+{
+public:
+    Log();
+    void setName(const char* name);
+    const char* getName();
+    void setSampleInterval(unsigned long seconds);
+    unsigned long getSampleInterval();
+
+    
+private:
+    const char* loggerName;
+    const char*  currentFileDir;
+    const char*  historyFileDir;
+    void setupSDCard();
+    unsigned long sampleInterval;
+    
+    
+};
+
+#endif
